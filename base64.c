@@ -43,7 +43,7 @@ static char const digittobin_map[] = {
 };
 static char digittobin_func(unsigned char index)
 {
-	if(122 < index || index < 1)
+	if(122 < index || index < 43)
 	{
 		return 64;
 	}
