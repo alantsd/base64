@@ -1,7 +1,11 @@
 # Base64
-[![Build Status](https://travis-ci.org/rafagafe/base64.svg?branch=master)](https://travis-ci.org/rafagafe/base64)
 
 Base64 is a C library to convert from plain to base64 and vice versa suitable for embedded systems.
+Optimized for less ROM usage for microcontroller.
+
+Typical size of using gcc version 6.3.1 20170215 (release) [ARM/embedded-6-branch revision 245512] (GNU Tools for ARM Embedded Processors (Build 17.0)) 
+text    data     bss     dec     hex filename
+ 513       0       0     513     201 arm_build\base64_lib.o
 
 # API
 
