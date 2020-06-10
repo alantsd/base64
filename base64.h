@@ -38,14 +38,14 @@ extern "C" {
 /** Get size required for encoding base64 null-terminated string.
   * @param size Size in bytes of source binary memory block.
   * @return A size of required for result of base64 encoding */  
-inline int bintob64_size(int size)
+static inline int bintob64_size(int size)
 {
    return ((size + 3 - 1) / 3 * 4);
 }
 /** Get size required for decoding base64 null-terminated string.
   * @param size Size in bytes of source base64 memory block.
   * @return A size of required for result of base64 decoding */
-inline int b64tobin_size(int size)
+static inline int b64tobin_size(int size)
 {
    return (size * 3 / 4);
 }
