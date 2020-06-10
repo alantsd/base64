@@ -7,7 +7,7 @@ Typical size of using gcc version 6.3.1 20170215 (release) [ARM/embedded-6-branc
 
 ```C
 text    data     bss     dec     hex filename
- 513       0       0     513     201 arm_build\base64_lib.o
+ 521       0       0     521     209 arm_build\base64_lib.o
  ```
 
 # API
