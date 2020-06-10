@@ -26,7 +26,6 @@
 */
 
 #include "base64.h"
-#include <assert.h>
 
 /** Escape values. */
 enum special_e {
@@ -41,7 +40,7 @@ static char const digittobin_map[] = {
 64, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51
 };
-static char digittobin_func(unsigned char index)
+static char digittobin(unsigned char index)
 {
 	if(122 < index || index < 43)
 	{
@@ -55,20 +54,20 @@ void* b64tobin( void* dest, char const* src ) {
     char* p = dest;
     for(;;) {
 
-        int const a = digittobin_func( *s );
+        int const a = digittobin( *s );
         if ( a == notabase64 ) return p;
         if ( a == terminator ) return p;
 
-        int const b = digittobin_func( *++s );
+        int const b = digittobin( *++s );
         if ( b == notabase64 ) return 0;
         if ( b == terminator ) return 0;
 
         *p++ = ( a << 2u ) | ( b >> 4u );
 
-        int const c = digittobin_func( *++s );
+        int const c = digittobin( *++s );
         if ( c == notabase64 ) return 0;
 
-        int const d = digittobin_func( *++s );
+        int const d = digittobin( *++s );
         if ( d == notabase64 ) return 0;
         if ( c == terminator ) {
             if ( d != terminator ) return 0;
